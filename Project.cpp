@@ -13,6 +13,8 @@ public:
     TwoWheelerVehicle(string manufacturer, string serial) 
         : manufacturer_name(manufacturer), serial_number(serial) {}
 
+virtual ~TwoWheelerVehicle() {}
+
     void Info() const {
         cout << "Manufacturer: " << manufacturer_name << endl;
         cout << "Serial Number: " << serial_number << endl;
@@ -29,6 +31,8 @@ private:
 public:
     ElectricCycle(string manufacturer, string serial, double radius, int revolutions) 
         : TwoWheelerVehicle(manufacturer, serial), tire_radius_cm(radius), wheel_revolutions(revolutions) {}
+
+~ElectricCycle() {}
 
     double calculateDistanceTraveled() const {
         double circumference_km = (2 * PI * tire_radius_cm) / CM_TO_KM;
